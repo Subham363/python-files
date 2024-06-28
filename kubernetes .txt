@@ -1,0 +1,112 @@
+Kubernetes Notes
+
+what is kubernetes?
+
+Kubernetes is an open-source container orchestration system designed by Google for automating software deployment, scaling, and management. 
+
+kubernetes archietecture
+
+-kubernetes works on master-slave archietecture. 
+-master node controls a one/group of worker nodes called as cluster to run containerised applications.
+-node is a machine in which kubernetes is installed.
+-each node consists of one or more pods in which the services will be running.
+-Pods are the smallest deployable units of computing that you can create and manage in Kubernetes
+
+components of kubernetes
+
+API server:it acts as a front end for kubernetes.users,devices, CLI all talk to the api server to interact with k8 cluster.
+
+ETCD: distributed and reliable key - value store used by k8 for all the data used to manager cluster.
+
+Scheduler: responsible for distributing container and work across multiple nodes.
+
+Controller: responsible to manage if any container or nodes goes down.(makes new container and node)
+
+Kubelet: Agent that run on each node and manages the nodes and make sure it runs as expected.
+
+contaienr runtime: underlying software to run container.(docker)
+
+
+
+Kubectl-Kubernetes command-line tool which allows you to run commands against Kubernetes clusters.
+kubectl run nginx --image=nginx: to create a pod named nginx and run nginx inside it.
+kubectl get pods: to see running pods
+kubectl describe pod nginx: detailed information about a pod
+
+
+
+Advantages of kubernetes 
+
+-Kubernetes has Multi-cloud Capability.
+-Kubernetes Runs Your Applications With Better Stability.
+-Kubernetes Is Open Source And Free.
+-Kubernetes Has Benefits of Cloud Native Management Tools.
+
+
+
+yaml file for kubernetes
+
+
+apiVersion: v1
+kind: Pod
+
+metadata:
+
+    name: spring-pod
+
+    containers:
+
+    – image: armo/springapp:example
+
+spec:
+
+      name: spring-app
+
+      ports:
+
+      – containerPort: 80
+
+        protocol: TCP
+
+
+
+
+When writing YAML files for Kubernetes, there are four required fields that must be present. APIVersion, Kind, Metadata, and Specifications.
+
+
+apiVersion:  API, which is being used to create the Kubernetes object.
+
+kind:kind represents the type of Kubernetes objects to be created while using the yaml file
+
+metadata:metadata field provides the unique properties for that specific object.
+
+spec:The spec field allows us to define what’s expected from the object that we’re building.
+     It consists of all the key-value pairs specific to defining the operation of the object.
+
+kubectl create -f <name.yml>: to create pod using above yaml file.
+
+
+
+
+replica sets: to create new pods in case the existing pods crashes or faces any issues. it helps to scale as well as does load balancing.
+
+kubectl get replicaset: to get the replicaset details
+kubectl delete replicaset <name>: to delete a replicaset(also deletes underlying pods)
+kubectl replace -f <name>: to replace/update existing replicaset.
+kubectl scale --replicas=6 -f <name>: to scale up number of replicas.
+
+
+services
+nodeport Service: The NodePort Service is a way to expose your application to external clients. object just like pods whose work is to listen to a port on the node and forward request on that port.
+
+cluster IP: ClusterIP is the default service type in Kubernetes, and it provides internal connectivity between different components of our application.
+The ClusterIP provides a load-balanced IP address. 
+One or more pods that match a label selector can forward traffic to the IP address.
+
+loadbalancer: The load balancer tracks the availability of pods with the Kubernetes Endpoints API. When it receives a request for a specific Kubernetes service, the Kubernetes load balancer sorts the request among relevant Kubernetes pods for the service.
+
+
+Microservices: Microservices are an architectural and organizational approach to software development where software is composed of small independent services that communicate over well-defined APIs.
+
+Kubeadm: kubeadm performs the actions necessary to get a minimum viable cluster up and running. 
+Kubeadm is a tool built to provide kubeadm init and kubeadm join as best-practice "fast paths" for creating Kubernetes clusters.

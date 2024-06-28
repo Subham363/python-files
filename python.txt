@@ -1,0 +1,218 @@
+What is Python?
+Python is a popular programming language. It was created by Guido van Rossum, and released in 1991.
+
+It is used for:
+
+web development (server-side),
+software development,
+mathematics,
+system scripting.
+
+
+Python Variable
+
+A variable name must start with a letter or the underscore character
+A variable name cannot start with a number
+A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )
+Variable names are case-sensitive (age, Age and AGE are three different variables)
+A variable name cannot be any of the Python keywords.
+
+input() to take inputs
+print() to print outputs
+
+
+Data types
+
+numeric types (int, float, complex), string (str), boolean (bool), and collection types (list, tuple, dict, set)
+
+Operators
+Operators refer to special symbols that perform operations on values and variables
+
+Arithmetic Operator
++
+-
+*
+/
+%
+**
+Assignment Operator
+=
++=
+-=
+
+
+Comparison operators
+==
+!=
+<=
+>=
+
+logical Operator
+and
+or
+not
+
+Day2
+
+Python For Loops
+A for loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a string).
+
+
+Python Functions
+A function is a block of code which only runs when it is called.
+
+You can pass data, known as parameters, into a function.
+
+A function can return data as a result.
+
+List
+Lists are used to store multiple items in a single variable.
+List items are ordered, changeable, and allow duplicate values.
+
+thislist = ["apple", "banana", "cherry"]
+print(thislist)
+
+
+Dictionary
+Dictionaries are used to store data values in key:value pairs.
+
+A dictionary is a collection which is ordered*, changeable and do not allow duplicates.
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(thisdict)
+
+
+
+
+
+Global and local variable
+
+Python Global variables are those which are not defined inside any function and have a global scope.
+Python local variables are those which are defined inside a function and their scope is limited to that function only.
+
+def f():
+    s= "I am local variable"
+    print("Inside Function", s)
+
+ 
+# Global scope
+s = "I am global variable"
+f()
+print("Outside Function", s)
+
+
+
+Python Classes/Objects
+Python is an object oriented programming language.
+A Class is like an object constructor, or a "blueprint" for creating objects.
+All classes have a function called __init__(), which is always executed when the class is being initiated.
+
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+p1 = Person("John", 36)
+
+print(p1.name)
+print(p1.age)
+
+
+Python Inheritance
+Inheritance allows us to define a class that inherits all the methods and properties from another class.
+
+Parent class is the class being inherited from, also called base class.
+
+Child class is the class that inherits from another class, also called derived class.
+
+
+Python also has a super() function that will make the child class inherit all the methods and properties from its parent:
+
+class Person:
+  def __init__(self, fname, lname):
+    self.firstname = fname
+    self.lastname = lname
+
+  def printname(self):
+    print(self.firstname, self.lastname)
+
+class Student(Person):
+  def __init__(self, fname, lname):
+    super().__init__(fname, lname)
+
+x = Student("Mike", "Olsen")
+x.printname()
+
+
+Absolute and relative file paths
+Absolute paths always start with the root directory and provide the full path to the file or directory.
+Relative path is a path to a file or directory that is relative to the current directory.
+
+What is CSV data in Python?
+CSV is an acronym for comma-separated values. It's a file format that you can use to store tabular data, such as in a spreadsheet. 
+You can also use it to store data from a tabular database. You can refer to each row in a CSV file as a data record.
+Each data record consists of one or more fields, separated by commas.
+
+TKINTER
+Tkinter is a Python library that can be used to construct basic graphical user interface (GUI) applications. 
+In Python, it is the most widely used module for GUI applications.
+
+What are args and kwargs in Python?
+The args stands for arguments that are passed to the function .
+kwargs stands for keyword arguments which are passed along with the values into the function.
+
+We use *args and **kwargs as an argument when we are unsure about the number of arguments to pass in the functions.
+
+
+
+
+Python Try Except
+it is used for exception handling in python
+
+try:
+  print("Hello")
+except:
+  print("Something went wrong")
+else:
+  print("Nothing went wrong")
+finally:
+  print("The 'try except' is finished")
+
+The try block lets you test a block of code for errors.
+
+The except block lets you handle the error.
+
+The else block lets you execute code when there is no error.
+
+The finally block lets you execute code, regardless of the result of the try- and except blocks.
+
+
+
+Send email with python using smtp
+
+
+API
+An API, or Application Programming Interface, is a server that you can use to retrieve and send data to using code. APIs are most commonly used to retrieve data
+
+
+
+
+HTML
+
+What is HTML and explain it?
+Introduction to HTML
+HTML stands for Hyper Text Markup Language. HTML is the standard markup language for creating Web pages. 
+HTML describes the structure of a Web page. HTML consists of a series of elements. 
+HTML elements tell the browser how to display the content.
+
+Heading tag
+<h1></h1> to <h6></h6>
+paragraph
+<p></p>
+
+
+

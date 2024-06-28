@@ -1,0 +1,24 @@
+Ansible is simple open source IT engine which automates application deployment, intra service orchestration, cloud provisioning and many other IT tools.
+
+Ansible is easy to deploy because it does not use any agents or custom security infrastructure.
+
+
+Playbooks are the files where Ansible code is written. Playbooks are written in YAML format. 
+YAML stands for Yet Another Markup Language. Playbooks are one of the core features of Ansible and tell Ansible what to execute. 
+They are like a to-do list for Ansible that contains a list of tasks.
+
+
+YAML uses simple key-value pair to represent the data. The dictionary is represented in key: value pair.
+
+
+Example: A student record
+--- #Optional YAML start syntax 
+james: 
+   name: james john 
+   rollNo: 34 
+   div: B 
+   sex: male 
+… #Optional YAML end syntax 
+
+
+Roles provide a framework for fully independent, or interdependent collections of variables, tasks, files, templates, and modules.
